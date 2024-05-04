@@ -1,7 +1,9 @@
 # NS-TPB v2 (Train Parallel Bus v2) 2.0.0-alpha10～ (draft)
 
 ## 関連情報
+
 > ⚠️現在下書きです
+
 - [オリジナル公開ページ（GitHub Gist）](https://gist.github.com/nona-takahara/fe1f6900592c8518c2698cce79dc8717)
 - [NS-TPB v2 Nona実装マイコンの入出力インターフェース](NS-TPBv2-nona.html)
 - [NS-TPB v1](NS-TPBv1.html)
