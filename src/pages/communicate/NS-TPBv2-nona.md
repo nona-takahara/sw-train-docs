@@ -1,3 +1,6 @@
+---
+layout: "@layouts/Layout.astro"
+---
 # NS-TPB v2 Nona 実装 インターフェース
 
 ## 関連情報
