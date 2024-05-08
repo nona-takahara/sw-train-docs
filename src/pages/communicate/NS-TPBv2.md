@@ -1,3 +1,6 @@
+---
+layout: "@layouts/Layout.astro"
+---
 # NS-TPB v2 (Train Parallel Bus v2) 2.0.0-alpha10～ (draft)
 
 ## 関連情報

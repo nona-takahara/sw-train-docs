@@ -1,3 +1,6 @@
+---
+layout: "@layouts/Layout.astro"
+---
 # Niner Supply Train Parallel Bus (NS-TPB) v1.2
 
 ## 関連情報

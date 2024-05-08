@@ -1,3 +1,6 @@
+---
+layout: "@layouts/Layout.astro"
+---
 # Stormworks用鉄道システム(高原のな まとめ)
 これらのページに掲載している内容は、高原のなが使用しているか使用を検討しているStormworks用鉄道システムです。
 
