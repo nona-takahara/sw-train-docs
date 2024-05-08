@@ -8,7 +8,11 @@ const headingnest: any = {children: []};
 
 for (const head of headings) {
   let current = headingnest;
-  let nest = head.depth - 1;
+  let nest = head.depth - 2;
+
+  if (nest < 0) {
+    continue;
+  }
 
   while(nest-- > 0) {
     if (current.children?.length) {
