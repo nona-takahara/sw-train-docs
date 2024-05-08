@@ -1,5 +1,27 @@
 ---
 const { frontmatter } = Astro.props;
+
+const headings: {depth: number, slug: string, text:string}[] = Astro.props.headings;
+const title = frontmatter.title || headings.find((v) => v.depth == 1)?.text || "";
+
+const headingnest: any = {children: []};
+
+for (const head of headings) {
+  let current = headingnest;
+  let nest = head.depth - 1;
+
+  while(nest-- > 0) {
+    if (current.children?.length) {
+      current = current.children[current.children.length - 1];
+      current.children = current.children || [];
+    } else {
+      current.children = [{}];
+      current = current.children[current.children.length - 1];
+      current.children = [];
+    }
+  }
+  current.children.push(head);
+}
 ---
 
 <!doctype html>
@@ -14,9 +36,20 @@ const { frontmatter } = Astro.props;
       integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
       crossorigin="anonymous"
     />
-    <title>{frontmatter.title}</title>
+    <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <a href="#content" style="visibility: hidden; position: fixed;">本文へ移動</a>
+    <nav>
+      {((headings) => {function headingMap(head: any) {
+        if (head.children?.length) {
+          return <><li><a href={"#" + head.slug}>{head.text}</a></li><ul>{head.children.map((h: any) => headingMap(h))}</ul></>
+        }
+        return <li><a href={"#" + head.slug}>{head.text}</a></li>;
+      } return headingMap(headings)})(headingnest)}
+    </nav>
+    <main id="content" class="container content">
+      <slot />
+    </main>
   </body>
 </html>
