@@ -5,7 +5,9 @@ import remarkMermaid from '@southball/remark-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://nona-takahara.github.io/sw-train-docs/",
+    site: "https://nona-takahara.github.io",
+    base: "/sw-train-docs",
+    output: "static",
     build: {
         format: "file"
     },
