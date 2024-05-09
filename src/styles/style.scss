@@ -133,6 +133,10 @@ p {
     flex-direction: column;
   }
 
+  @media print {
+    flex-direction: column;
+  }
+
   nav {
     flex: 2 1;
     margin-left: 1ic;
@@ -157,6 +161,14 @@ p {
       & > h3 {
         margin-top: 0;
         margin-left: 0.25ic;
+
+        @media screen and (max-width: 720px) {
+          margin-left: 0;
+        }
+
+        @media print {
+          margin-left: 0;
+        }
       }
 
       & ul {
@@ -279,14 +291,14 @@ table {
 }
 
 header {
-    border-bottom: 1px solid var(--text-color);
-    margin: 1em 0;
-    h1 {
-        border-bottom: none;
-    }
+  border-bottom: 1px solid var(--text-color);
+  margin: 1em 0;
+  h1 {
+    border-bottom: none;
+  }
 }
 
 footer {
-    margin-top: 1ic;
-    border-top: 1px solid var(--text-color);
+  margin-top: 1ic;
+  border-top: 1px solid var(--text-color);
 }
