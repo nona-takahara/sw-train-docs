@@ -1,10 +1,13 @@
 ---
+import "@styles/style.scss";
 const { frontmatter } = Astro.props;
 
-const headings: {depth: number, slug: string, text:string}[] = Astro.props.headings;
-const title = frontmatter.title || headings.find((v) => v.depth == 1)?.text || "";
+const headings: { depth: number; slug: string; text: string }[] =
+  Astro.props.headings;
+const title =
+  frontmatter.title || headings.find((v) => v.depth == 1)?.text || "";
 
-const headingnest: any = {children: []};
+const headingnest: any = { children: [] };
 
 for (const head of headings) {
   let current = headingnest;
@@ -14,7 +17,7 @@ for (const head of headings) {
     continue;
   }
 
-  while(nest-- > 0) {
+  while (nest-- > 0) {
     if (current.children?.length) {
       current = current.children[current.children.length - 1];
       current.children = current.children || [];
@@ -43,17 +46,65 @@ for (const head of headings) {
     <title>{title}</title>
   </head>
   <body>
-    <a href="#content" style="visibility: hidden; position: fixed;">本文へ移動</a>
-    <nav>
-      {((headings) => {function headingMap(head: any) {
-        if (head.children?.length) {
-          return <><li><a href={"#" + head.slug}>{head.text}</a></li><ul>{head.children.map((h: any) => headingMap(h))}</ul></>
-        }
-        return <li><a href={"#" + head.slug}>{head.text}</a></li>;
-      } return headingMap(headings)})(headingnest)}
-    </nav>
-    <main id="content" class="container content">
-      <slot />
-    </main>
+    <a href="#content" style="visibility: hidden; position: fixed;"
+      >本文へ移動</a
+    >
+    <header>
+      <div class="container">
+        <h1 class="brand">
+          <a href="/sw-train-docs/">Stormworks用鉄道システム(高原のな まとめ)</a
+          >
+        </h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class=" twocolumn">
+      <nav>
+        <div>
+          <h3>目次</h3>
+          {
+            ((headings) => {
+              function headingMap(head: any) {
+                if (head.children?.length) {
+                  if (head.text) {
+                    return (
+                      <>
+                        <>
+                          <li>
+                            <a href={"#" + head.slug}>{head.text}</a>
+                          </li>
+                          <ul>
+                            {head.children.map((h: any) => headingMap(h))}
+                          </ul>
+                        </>
+                      </>
+                    );
+                  } else {
+                    return (
+                      <ul>{head.children.map((h: any) => headingMap(h))}</ul>
+                    );
+                  }
+                }
+                return (
+                  <li>
+                    <a href={"#" + head.slug}>{head.text}</a>
+                  </li>
+                );
+              }
+              return headingMap(headings);
+            })(headingnest)
+          }
+        </div>
+      </nav>
+      <main id="content" class="content">
+        <slot />
+      </main>
+    </div>
+    </div>
+    <footer>
+      <div class="container">
+        <p>Nona Takahara</p>
+      </div>
+    </footer>
   </body>
 </html>
