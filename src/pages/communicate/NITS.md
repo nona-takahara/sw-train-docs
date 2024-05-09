@@ -3,7 +3,7 @@ layout: "@layouts/Layout.astro"
 ---
 # Nona's Integrated Train System (NITS)
 
-現在作成中……
+> 現在作成中……
 
 ## 基本マイコンのインターフェース
 
