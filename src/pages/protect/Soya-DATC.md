@@ -68,7 +68,7 @@ layout: "@layouts/Layout.astro"
 0 (float)
 
 #### キーパッドH1 (保安装置判別ID)
-1 (float)
+2 (float)
 
 #### キーパッドH2 (保安装置領域1: 停止信号照査)
 30ビット整数値とfloat値の変換はTeinishiによる [Stormworks 数値信号に30ビット詰め込む話 - メモ置き場](https://teinishi.hateblo.jp/entry/stormworks-number-30bit) を採用する。
