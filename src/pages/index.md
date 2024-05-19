@@ -21,6 +21,7 @@ layout: "@layouts/Layout.astro"
 ## 列車同士の安全に関するもの
 - [宗弥急行プロジェクト ATS](protect/Soya-ATS.html)
 - [宗弥急行プロジェクト デジタルATC](protect/Soya-DATC.html)
+- [宗弥急行プロジェクト 防護無線](protect/Soya-Radio.html)
 - [SASARACOS \[🔗外部システム\]](https://github.com/MyanoSASA/SASARACOSPRE)（[高原による 最新版 解析情報](protect/SASARACOS.html)）
 - [ATS-S<sub>AE</sub>（動画）\[🔗外部システム\]](https://www.nicovideo.jp/watch/sm38675237)（[高原による解析情報](protect/ATS-S-AE.html)）
 
