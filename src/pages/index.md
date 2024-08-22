@@ -26,4 +26,5 @@ layout: "@layouts/Layout.astro"
 - [ATS-S<sub>AE</sub>（動画）\[🔗外部システム\]](https://www.nicovideo.jp/watch/sm38675237)（[高原による解析情報](protect/ATS-S-AE.html)）
 
 ## 運転支援系
+- [宗弥急行プロジェクト ARC](support/Soya-Express-ARC.html)
 - [SLAS \[🔗外部システム\]](support/SLAS.html)
