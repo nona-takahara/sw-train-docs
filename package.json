@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.6.0",
-    "@mermaid-js/mermaid-cli": "^9.3.0",
-    "@southball/remark-mermaid": "^0.5.0",
-    "astro": "^4.7.1",
+    "@astrojs/check": "^0.9.4",
+    "@mermaid-js/mermaid-cli": "^11.6.0",
+    "@southball/remark-mermaid": "^0.6.0",
+    "astro": "^5.10.0",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
     "typescript": "^5.4.5"
