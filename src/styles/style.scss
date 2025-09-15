@@ -271,7 +271,7 @@ blockquote {
 }
 
 table {
-  margin: 1ic auto;
+  margin: 1ic 0;
   border-bottom: 1px solid var(--text-color);
   border-collapse: collapse;
 
@@ -287,6 +287,10 @@ table {
   th {
     padding: 2px 0.5ic;
   }
+  td:not(:first-child),
+  th:not(:first-child) {
+    border-left: 1px solid rgb(from var(--text-color) r g b / 25%);
+  }
 }
 
 header {
@@ -300,4 +304,12 @@ header {
 footer {
   margin-top: 1ic;
   border-top: 1px solid var(--text-color);
+}
+
+a[href^="http"]:after,
+a[href^="//"]:after {
+  margin: 0 0 0 3px;
+  font-family: "remixicon";
+  content: '\ECAF';
+  font-weight: 900;
 }
