@@ -123,6 +123,11 @@ p {
   margin: 0.5ic 0;
 }
 
+li {
+  margin: 0.3125ic 0;
+}
+
+
 .twocolumn {
   display: flex;
   flex-wrap: wrap;
@@ -308,8 +313,6 @@ footer {
 
 a[href^="http"]:after,
 a[href^="//"]:after {
-  margin: 0 0 0 3px;
   font-family: "remixicon";
   content: '\ECAF';
-  font-weight: 900;
 }
